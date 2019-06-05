@@ -11,12 +11,11 @@ import LoadingScreen from "../screens/LoadingScreen";
 
 import TextStyle from "../css/TextStyles";
 import { printWarn } from "../utils/LogUtil";
-import { getStringCurrentDate, getResetActionWithParams } from '../utils/Utils';
+import { getStringCurrentDate } from '../utils/Utils';
 import { storeUserInfo, storeEZAsync } from '../utils/StorageUtils';
 
 import { Layout, FontSize } from '../const/Layout';
 import { CheckOTP } from '../api/SoapApi';
-import { getMenuListByStaffType } from '../utils/MenuListUtil';
 import { dbRespMess } from '../const/AppConfig';
 
 export default class OtpScreen extends Component {
@@ -114,7 +113,7 @@ export default class OtpScreen extends Component {
     return (
       <TouchableOpacity style={css.btnBack} onPress={this.onBack.bind(this)}>
         <Ionicons
-          name  = 'ios-arrow-back-outline'
+          name  = 'ios-arrow-back'
           color = 'white'
           size  = {FontSize.iconSizeWithNormalText}
         />
@@ -131,7 +130,7 @@ export default class OtpScreen extends Component {
           <LoginIcon />
           <Text style = {TextStyle.title}>Đăng nhập</Text>
           <Text style = {[TextStyle.normal, css.txtMessage, { textAlign: 'center' }]}>
-            Bạn sẽ nhận được mã OTP qua SMS.{'\n'}Vui lòng nhập mã vào ô bên dưới.
+            Bạn sẽ nhận được mã OTP qua SMS.{'\n'}Vui lòng nhập mã OTP vào ô bên dưới.
           </Text>
           <LoginForm 
             title           = "Mã OTP" 
