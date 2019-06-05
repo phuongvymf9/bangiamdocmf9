@@ -15,16 +15,6 @@ export const loaiNhanVien = {
   phanLoaiNVTC        : 'NVTC', // Nhan vien thu cuoc
 };
 
-// ## PHAN LOAI BAO CAO----------------------------------------------------
-
-export const loaiBaoCao = {
-  rpLuongTongHop     : 'LuongTongHop',
-  rpLuongBoSung      : 'LuongBoSung',
-  rpLuongBoSungImp   : 'LuongBoSungImport',
-  rpLuongKpi         : 'LuongTongKpi',
-  rpLuongCVKD        : 'LuongCVKD',
-};
-
 // ## DEFAULT MESSAGE------------------------------------------------------
 
 export const dbRespMess = {
@@ -50,28 +40,3 @@ export const AppVersion = '01112018';
 // ## Reload user info key -------------------------------------------------
 
 export const RELOAD_USERINFO_KEY = 'asda*ASdsje1@@Sdashg!aksdhSAd';
-
-// ## ID Chuong trinh CSKH -------------------------------------------------
-
-export const IDChuongTrinhCSKH = {
-  ChucMungSinhNhat  : 'CMSN',
-  MobiFoneCamOn     : 'MFCAMON',
-  TichDiemDoiQua    : 'TDDQ'
-};
-
-// ## ID Man hinh TNXLYC -------------------------------------------------
-
-export const IDManHinhTNXLYC = {
-  NhapYeuCau            : 'NYC',
-  DanhSachYeuCau        : 'DSYC',
-  ThongKeYeuCau         : 'TKYC',
-  ThongKeXuLy           : 'TKXL'
-};
-
-// ## ID Man hinh BCHA -------------------------------------------------
-
-export const IDManHinhBCHA = {
-  BaoCaoDiemGiaoDich    : 'DGD',
-  KenhPhanPhoi          : 'KPP',
-  ThongKeKPP           : 'TKPP'
-};
