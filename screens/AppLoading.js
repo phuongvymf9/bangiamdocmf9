@@ -58,48 +58,6 @@ export default class AppLoading extends Component {
 
   _loadResourcesAsync = async () => {
     return Promise.all([
-      Asset.loadAsync([
-        require('../assets/icon-login.png'),
-        require('../assets/user-info.png'),
-        require('../assets/vongquay.png'),
-        require('../assets/NutQuayThuong.png'),
-        require('../assets/icon-danhgia/bad.png'),
-        require('../assets/icon-danhgia/normal.png'),
-        require('../assets/icon-danhgia/good.png'),
-        require('../assets/icon-danhgia/bad_light.png'),
-        require('../assets/icon-danhgia/normal_light.png'),
-        require('../assets/icon-danhgia/good_light.png'),
-        require('../assets/quaythuong-gdv/bg-gdv.jpg'),
-        // Qua Chuc Mung Sinh Nhat
-        require('../assets/qua-cmsn/balo-thoitrang.jpg'),
-        require('../assets/qua-cmsn/binh-coc.jpg'),
-        require('../assets/qua-cmsn/bo-binh-loc-tra.jpg'),
-        require('../assets/qua-cmsn/bo-cap-sac-hoco.jpg'),
-        require('../assets/qua-cmsn/bo-cap-sac-yoobao.jpg'),
-        require('../assets/qua-cmsn/can-dien-tu.jpg'),
-        require('../assets/qua-cmsn/dia-thuy-tinh.jpg'),
-        require('../assets/qua-cmsn/loa-nghe-nhac.jpg'),
-        require('../assets/qua-cmsn/loa-yoobao.jpg'),
-        require('../assets/qua-cmsn/ly-thuy-tinh.jpg'),
-        require('../assets/qua-cmsn/pin-sac.jpg'),
-        // Qua MobiFone Cam On
-        require('../assets/qua-mfcamon/mfcamon_balo.jpg'),
-        require('../assets/qua-mfcamon/mfcamon_sacduphong.jpg'),
-        require('../assets/qua-mfcamon/mfcamon_diathuytinh.jpg'),
-        // Qua Tich diem doi qua
-        require('../assets/qua-tichdiemdoiqua/BLY_TD.jpg'),
-        require('../assets/qua-tichdiemdoiqua/CAN_TD.jpg'),
-        require('../assets/qua-tichdiemdoiqua/AMUA_TD.jpg'),
-        require('../assets/qua-tichdiemdoiqua/SAC_TD.jpg'),
-        require('../assets/qua-tichdiemdoiqua/BALO_RM.jpg'),
-        require('../assets/qua-tichdiemdoiqua/BALO_TD.jpg'),
-        require('../assets/qua-tichdiemdoiqua/SAC_TD.jpg'),
-        require('../assets/qua-tichdiemdoiqua/BTRA_RM.jpg'),
-        require('../assets/qua-tichdiemdoiqua/LYRUOU_RM.jpg'),
-        require('../assets/qua-tichdiemdoiqua/DIA_TD.jpg'),
-        require('../assets/qua-tichdiemdoiqua/Loa_TD.jpg'),
-        require('../assets/qua-tichdiemdoiqua/VALI_TD.jpg'),
-      ]),
       Font.loadAsync({
         ...Ionicons.font,
         ...MaterialCommunityIcons.font,
