@@ -1,7 +1,7 @@
 import Sentry from 'sentry-expo';
 import { SentrySeverity } from 'react-native-sentry';
 
-const dns = 'https://236ba4ba28904af098b599737002f683:a7d34d961567472398df32947ad98652@sentry.io/1219568';
+const dns = 'https://21a9b32d0a7f4031b51ddae54afa8b3b:3f5236f88fc94eb2be15f6bc25dbc040@sentry.io/1475160';
 
 // Function to configure Sentry. Call this when your app mounts
 export const configure = () => {
