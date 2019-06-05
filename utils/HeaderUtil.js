@@ -51,17 +51,6 @@ export const createSubNavigationOptions = (title) => {
   return options;
 }
 
-export const createCSKHNavigationOptions = ({ navigation }) => ({
-  title: `${navigation.state.params.title}`,
-  headerStyle: {
-    backgroundColor: SolidColors.appBarColor,
-  },
-  headerTintColor: '#fff',
-  headerTitleStyle: {
-    fontWeight: 'bold',
-  }
-});
-
 export const createNullNavigationOptions = () => {
   const options = {
     header: null
@@ -74,6 +63,5 @@ export default {
   createHomeNavigationOptions,
   createNavigationOptions,
   createSubNavigationOptions,
-  createNullNavigationOptions,
-  createCSKHNavigationOptions
+  createNullNavigationOptions
 }
