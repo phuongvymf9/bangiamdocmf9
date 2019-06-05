@@ -17,11 +17,10 @@ const stackNaviConfig = {
     },
   }
 }
-
 //test
-const NavigationStack = createStackNavigator(
+const NavigationStack = createSwitchNavigator(
   {
-    Loading         : AppLoading, // AppLoading,
+    Loading         : AppLoading, 
     Login           : LoginStackNavigation,
     Home            : MainStackNavigations
   },
@@ -31,12 +30,3 @@ const NavigationStack = createStackNavigator(
 const Container = createAppContainer(NavigationStack);
 
 export default Container;
-
-// export default createSwitchNavigator(
-//   {
-//     Loading         : AppLoading, // AppLoading,
-//     Login           : LoginStackNavigation,
-//     Home            : MainStackNavigations
-//   },
-//   stackNaviConfig
-// );
