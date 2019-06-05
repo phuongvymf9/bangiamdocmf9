@@ -171,7 +171,7 @@ export default class HomeScreen extends Component {
         if (update.isAvailable) {
           Alert.alert(
             'THÔNG BÁO',
-            'Staff MF9 đã có bản cập nhật mới. Bạn có muốn khởi động lại ứng dụng để cập nhật?',
+            'Manager MF9 đã có bản cập nhật mới. Bạn có muốn khởi động lại ứng dụng để cập nhật?',
             [
               { text: 'Không', onPress: () => { LogUtil.log('Alert update app manual', 'canceled') } },
               { text: 'Đồng ý', onPress: this._updateAppManual },
