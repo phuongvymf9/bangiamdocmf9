@@ -1,20 +1,16 @@
 {
   "expo": {
-    "name": "MF9Manager",
-    "slug": "MF9Manager",
-    "privacy": "public",
-    "sdkVersion": "32.0.0",
-    "platforms": [
-      "ios",
-      "android"
-    ],
+    "name": "MF9 Manager",
     "version": "1.0.0",
+    "sdkVersion": "32.0.0",
+    "slug": "nhanvienquanlymf9",
+    "privacy": "public",
+    "icon": "./assets/icon-android.png",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#398FFF"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -24,6 +20,24 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "mf-he",
+            "project": "nhanvienquanlymf9",
+            "authToken": "511f4775439645978898efc666aaf59a102314545de14c579b0c172aceb23f0f"
+          }
+        }
+      ]
+    },
+    "scheme": "expbc71e51417e146ab814b229e261e9e9d",
+    "description": "",
+    "platforms": [
+      "ios",
+      "android"
+    ]
   }
 }
