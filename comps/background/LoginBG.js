@@ -11,6 +11,7 @@ export default class LoginBG extends Component {
         style   = {css.bgColor}
         colors  = {GradientColors.backgroundColor.colors}
         start   = {GradientColors.backgroundColor.start}
+        end     = {GradientColors.backgroundColor.end}
       />
     );
   }
