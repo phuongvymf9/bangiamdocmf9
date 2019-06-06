@@ -30,7 +30,7 @@ export default class LoginForm extends Component {
       <View style = {css.container}>
         <Text style = {[TextStyle.small, { color: 'white', textAlign: 'center' }]}>{this.props.title}</Text>
         <TextInput
-          style         = {[css.input, css.inputText, TextStyle.medium, { textAlign: 'center' }]}
+          style         = {[css.input, css.inputText, css.txtText, TextStyle.normal, { textAlign: 'center' }]}
           value         = {this.state.inputValue}
           onChangeText  = {val => this.setState({ inputValue: val })}
           placeholder   = {this.props.placeholderText}
@@ -39,9 +39,9 @@ export default class LoginForm extends Component {
           placeholderTextColor  = {SolidColors.loginPlacholderText}
         />
         <TouchableOpacity 
-          style   = {css.input} 
+          style   = {css.inputBtn} 
           onPress = {this._onPress.bind(this)}>
-          <Text style = {[TextStyle.medium, { color: 'white', textAlign: 'center' }]}>{this.props.buttonName}</Text>
+          <Text style = {[TextStyle.medium, { color: '#FFF', textAlign: 'center' }]}>{this.props.buttonName}</Text>
         </TouchableOpacity>
       </View>
     );
@@ -52,16 +52,27 @@ const css = StyleSheet.create({
   container: {
     width: LoginFormLayout.formWidth,
     padding: Layout.marginPaddingDefault,
-  }
-  , input: {
+  },
+  input: {
     height: LoginFormLayout.inputHeight,
-    borderRadius: LoginFormLayout.borderRadius,
+    width: '100%',
     borderColor: LoginFormLayout.borderColor,
     borderWidth: LoginFormLayout.borderWidth,
     justifyContent: 'center',
-    marginTop: Layout.marginPaddingDefault
-  }
-  , inputText: {
-    color: 'yellow'
+    marginTop: Layout.marginPaddingDefault,
+    borderRadius: LoginFormLayout.borderRadius, 
+  },
+  inputText: {
+    color: '#FF855E'
+  },
+  inputBtn: {
+    height: LoginFormLayout.inputHeight,
+    width: '100%',
+    borderColor: '#398FFF',
+    borderWidth: LoginFormLayout.borderWidth,
+    justifyContent: 'center',
+    marginTop: Layout.marginPaddingDefault,
+    backgroundColor: '#398FFF',
+    borderRadius: LoginFormLayout.borderRadius,
   }
 });
