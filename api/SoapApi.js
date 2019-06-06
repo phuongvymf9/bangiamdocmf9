@@ -1,6 +1,5 @@
 import { printLog, printWarn, printError } from "../utils/LogUtil";
 import { respXml2Json, toMonthForCallApi } from "../utils/Utils";
-import { getLuongAsync }                   from "../utils/StorageUtils";
 
 const ApiUrl      = 'https://staffmf9.mobifone9.vn/CSDBL.asmx';
 const TestApiUrl  = 'http://10.32.10.81:9081/CSDBL.asmx';
@@ -65,7 +64,7 @@ export const Login = (lat, lng, ez, handleSuccess, handleError) => {
       <soap:Body>
         <Login xmlns="WSDBL">
           <lng>${lat}</lng>
-          <lat>${lng}</lat>
+          <lat>${lng}</lat> 
           <ez>${ez}</ez>
         </Login>
       </soap:Body>
@@ -115,21 +114,21 @@ export const ApiAppTools = {
     execSOAPWebService(data, handleSuccess, handleError, { test: false });
   },
 
-  LoadMenu: function (lat, lng, ez, imeis, handleSuccess, handleError) {
+  MNG_LoadMenu: function (lat, lng, ez, imeis, handleSuccess, handleError) {
     let data = `<?xml version="1.0" encoding="utf-8"?>
-      <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-        <soap:Body>
-          <LoadMenu xmlns="WSDBL">
-            <lat>${lat}</lat>
-            <lng>${lng}</lng>
-            <ez>${ez}</ez>
-            <imeis>${imeis}</imeis>
-          </LoadMenu>
-        </soap:Body>
-      </soap:Envelope>`;
+    <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+      <soap:Body>
+        <MNG_LoadMenu xmlns="WSDBL">
+          <lat>${lat}</lat>
+          <lng>${lng}</lng>
+          <ez>${ez}</ez>
+          <imeis>${imeis}</imeis>
+        </MNG_LoadMenu>
+      </soap:Body>
+    </soap:Envelope>`;
 
-    printLog('exec SOAP LoadMenu', { lat, lng, ez, imeis });
+    printLog('exec SOAP MNG_LoadMenu', { lat, lng, ez, imeis });
 
-    execSOAPWebService(data, handleSuccess, handleError, { test: false });
+    execSOAPWebService(data, handleSuccess, handleError, { test: true });
   },
 }
