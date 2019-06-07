@@ -29,7 +29,7 @@ const stackNaviConfig = {
 export default createStackNavigator(
   {
     Home          : HomeScreen, // HomeScreen,
-    TaiKhoan      : TaiKhoanScreen,
+    UserInfo      : TaiKhoanScreen,
     LichSuChamSoc : HistoryScreen,
     DongBo        : DongBoScreen,
   },
