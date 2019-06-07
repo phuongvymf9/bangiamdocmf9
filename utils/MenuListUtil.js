@@ -179,7 +179,7 @@ const getMenuListByEzOnline = async (ez, callback) => {
   lat = lng = 'toado';
 
   DeviceInfo.getImeis(imeis => {
-    ApiAppTools.LoadMenu(lat, lng, ez, imeis,
+    ApiAppTools.MNG_LoadMenu(lat, lng, ez, imeis,
       reS => {
         if (typeof reS.result === 'string') {
           callback('Có lỗi trong quá trình tải danh sách Menu. Vui lòng khởi động lại ứng dụng.\n' + reS.result);
