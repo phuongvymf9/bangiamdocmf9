@@ -50,10 +50,10 @@ export default class MenuItem extends Component {
   }
 };
 
-const parentViewSize = Platform.OS === 'android' 
+let parentViewSize = Platform.OS === 'android' 
   ? Layout.screenWidth - 2
   : Layout.screenWidth - 1; // - 1 border
-const menuItemSize = parentViewSize / 3;
+let menuItemSize = parentViewSize / 3;
 
 const css = StyleSheet.create({
   vMenuItem: {
