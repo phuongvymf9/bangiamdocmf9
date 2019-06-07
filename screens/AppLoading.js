@@ -90,7 +90,6 @@ export default class AppLoading extends Component {
   render() {
     return (
       <View style = {css.container}>
-        <LoginBG />
         <View style = {css.main}>
           <LoginIcon />
           <View style = {css.vIndicator}>
@@ -111,7 +110,8 @@ export default class AppLoading extends Component {
 
 const css = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: '#398FFF'
   }
   , main: {
     flex: 1,
