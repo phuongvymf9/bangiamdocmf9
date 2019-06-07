@@ -24,6 +24,6 @@ const css = StyleSheet.create({
   }
   , imgIcon: {
     height: IconSize.loginIcon.height,
-    width: IconSize.loginIcon.width
+    width: IconSize.loginIcon.width,
   }
 });

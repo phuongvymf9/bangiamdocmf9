@@ -111,7 +111,7 @@ export default class AppLoading extends Component {
 
 const css = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1
   }
   , main: {
     flex: 1,
