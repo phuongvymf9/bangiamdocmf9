@@ -4,7 +4,7 @@ import { FontSize } from "../const/Layout";
 export default TextStyle = StyleSheet.create({
   title: {
     color: 'white',
-    fontSize: FontSize.titleHeader,
+    fontSize: FontSize.titleLogin,
     textAlign: 'center',
     // fontWeight: 'bold'
     fontFamily: 'roboto-bold'
