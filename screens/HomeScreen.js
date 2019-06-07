@@ -152,7 +152,7 @@ export default class HomeScreen extends Component {
   // ===========================================================================================================
 
   _gotoMenu       = (screenName)  => { this.props.navigation.navigate(screenName); }
-  _goToTaiKhoan   = ()            => { this.props.navigation.navigate("TaiKhoan"); }
+  _goToTaiKhoan   = ()            => { this.props.navigation.navigate("UserInfo"); }
   _renderMenuItem = (rowData)     => { return <MenuItem data={rowData} onPress={this._gotoMenu} />; }
   _refLoading     = ref           => { this.Loading = ref; }
 
