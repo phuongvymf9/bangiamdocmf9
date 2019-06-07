@@ -62,11 +62,7 @@ export default class UserInfo extends Component {
 
   render() {
     return (
-      <LinearGradient
-        colors  = {GradientColors.backgroundColor.colors}
-        start   = {GradientColors.backgroundColor.start}
-        style   = {[css.vUserInfo, AlignStyle.middle]}
-      >
+      <View style   = {[css.vUserInfo, AlignStyle.middle]} >
         <Image
           source  = {require('../../assets/user-info.png')}
           style   = {css.imgIcon}
@@ -74,7 +70,7 @@ export default class UserInfo extends Component {
         <View style = {[css.vInfoText]}>
           {this._UserInfo()}
         </View>
-      </LinearGradient>
+      </View>
     );
   }
 };
@@ -82,6 +78,7 @@ export default class UserInfo extends Component {
 const css = StyleSheet.create({
   vUserInfo: {
     paddingTop: Layout.statusBarHeight,
+    backgroundColor: '#398FFF'
   }
   , imgIcon: {
     width: 80,
