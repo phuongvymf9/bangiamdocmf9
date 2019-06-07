@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, KeyboardAvoidingView, Alert, Platform } from 'react-native';
+import Icon from "react-native-vector-icons/Ionicons";
 
 import LoginBG      from "../comps/background/LoginBG";
 import LoginIcon    from "../comps/icon/LoginIcon";
@@ -121,19 +122,21 @@ export default class LoginScreen extends Component {
         style     = {css.container}
       >
         <LoginBG />
-        <View style = {css.main}>
-          <LoginIcon />
-          <Text style = {TextStyle.title}>Đăng nhập</Text>
-          <Text style = {[TextStyle.small, css.txtMessage]}>
-            Nhập EZ tính lương đối với nhân viên BHK & BHTT.{'\n'}
-            Nhập số điện thoại trên hệ thống nhân sự đối với Chuyên viên GSKPP.
-          </Text>
-          <LoginForm 
-            title           = "Số EZ" 
-            action          = {this.onDangNhap.bind(this)} 
-            placeholderText = 'Nhập số EZ' 
-            buttonName      = 'Đăng nhập'
+        <View style = {css.main}> 
+          <Icon
+            name="ios-people"
+            color="#FFF"
+            size={140}
           />
+              <Text style = {[TextStyle.title, css.txtTitle]}>Đăng nhập</Text>
+              <Text style = {[TextStyle.normal, css.txtMessage]}>
+                Chào mừng đến với ứng dụng dành cho {'\n'} Nhân viên quản lý Công ty Mobifone 9.
+              </Text>
+              <LoginForm 
+                action          = {this.onDangNhap.bind(this)} 
+                placeholderText = 'Nhập số EZ' 
+                buttonName      = 'Đăng nhập'
+              />
         </View>
         <LoadingScreen ref = {ref => this.Loading = ref} />
       </KeyboardAvoidingView>
@@ -143,7 +146,7 @@ export default class LoginScreen extends Component {
 
 const css = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1
   }
   , main: {
     flex: 1,
@@ -156,5 +159,8 @@ const css = StyleSheet.create({
     marginTop: Layout.marginPaddingDefault,
     textAlign: 'center',
     paddingHorizontal: Layout.marginPaddingLarge * 2
+  },
+  txtTitle: {
+    color: '#FFF'
   }
 });
