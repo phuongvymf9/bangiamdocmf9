@@ -63,7 +63,7 @@ const css = StyleSheet.create({
     borderRadius: LoginFormLayout.borderRadius, 
   },
   inputText: {
-    color: '#FF855E'
+    color: '#FF3636'
   },
   inputBtn: {
     height: LoginFormLayout.inputHeight,
