@@ -21,17 +21,22 @@ const end   = [0, 0]
 
 export const GradientColors = {
   backgroundColor: {
-    colors  : ['#709AFF', '#398FFF'],
+    colors  : ['#398FFF', '#00CC87'],
+    start   : [0.5, 0],
+    end     : [0, 1]
+  },
+  taiKhoanMenu: {
+    colors  : ['#6E81FF', '#71B3FF'],
     start   : start,
     end     : end
   },
-  taiKhoanMenu: {
+  taiKhoanMenuOld: {
     colors  : ['#01CCDB', '#00CC87'],
     start   : start,
     end     : end
   },
-  menuKpi: {
-    colors  : ['#FF36F2', '#B371FF'],
+  menuLogin: {
+    colors  : ['#FFF', '#ECEFF1'],
     start   : start,
     end     : end
   },
@@ -84,9 +89,9 @@ export const GradientColors = {
 
 export const ButtonColors = {
   ButtonQuayThuong: {
-    colors  : ['#4481eb', '#04befe'],
-    start   : [0, 0.5],
-    end     : [1, 1]
+    colors  : ['#4481eb', '#FF855E'],
+    start   : [0.5, 0],
+    end     : [0, 1]
   },
   ButtonCuaHang: {
     colors: ['#FF855E', '#ff9a44'], 
