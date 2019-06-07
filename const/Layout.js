@@ -46,6 +46,7 @@ export const FontSize = {
   medium        : 18,
   small         : 12,
   titleHeader   : 21,
+  titleLogin    : 30,
   normalText    : 15,
   mediumText    : 17,
   avartar       : 38,
