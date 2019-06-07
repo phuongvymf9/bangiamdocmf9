@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, KeyboardAvoidingView, TouchableOpacity, Alert } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import Icon from "react-native-vector-icons/Ionicons";
 import { Constants } from "expo";
 
 import LoginBG from "../comps/background/LoginBG";
@@ -112,10 +112,10 @@ export default class OtpScreen extends Component {
   _ButtonBack = () => {
     return (
       <TouchableOpacity style={css.btnBack} onPress={this.onBack.bind(this)}>
-        <Ionicons
-          name  = 'ios-arrow-back'
-          color = 'white'
-          size  = {FontSize.iconSizeWithNormalText}
+        <Icon
+          name="ios-arrow-back"
+          color="#FFF"
+          size={FontSize.iconSizeWithNormalText}
         />
         <Text style = {[TextStyle.normal, { color: 'white', marginLeft: Layout.marginPaddingDefault }]}>Trở về</Text>
       </TouchableOpacity>
@@ -127,7 +127,11 @@ export default class OtpScreen extends Component {
       <KeyboardAvoidingView behavior='padding' style={css.container} >
         <LoginBG />
         <View style = {css.main}>
-          <LoginIcon />
+          <Icon
+              name="ios-people"
+              color="#FFF"
+              size={140}
+            />
           <Text style = {TextStyle.title}>Đăng nhập</Text>
           <Text style = {[TextStyle.normal, css.txtMessage, { textAlign: 'center' }]}>
             Bạn sẽ nhận được mã OTP qua SMS.{'\n'}Vui lòng nhập mã OTP vào ô bên dưới.
