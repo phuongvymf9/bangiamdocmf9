@@ -27,7 +27,10 @@ export default TextStyle = StyleSheet.create({
     fontSize: FontSize.mediumText,
     fontFamily: 'roboto-regular'
   }
-
+  , mediumChange: {
+    fontSize: FontSize.medium,
+    fontFamily: 'roboto-bold'
+  }
   , normal: {
     fontSize: FontSize.normalText,
     fontFamily: 'roboto-regular'
