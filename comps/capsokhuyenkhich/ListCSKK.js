@@ -1,11 +1,12 @@
 import React, { PureComponent } from 'react';
-import { View, StyleSheet, FlatList, Text } from 'react-native';
+import { View, StyleSheet, FlatList, Platform } from 'react-native';
 
 import AlignStyle   from '../../css/AlignStyle';
+import ShadowStyle  from '../../css/ShadowStyle';
 
 import { Layout }   from '../../const/Layout';
 import { SolidColors } from '../../const/Colors';
-import { printLog } from '../../utils/LogUtil';
+
 import CSKKItem from './CSKKItem';
 
 export default class ListCSKK extends PureComponent {
@@ -28,12 +29,12 @@ export default class ListCSKK extends PureComponent {
   }
 
   render() {
-    // let shadow = Platform.OS === 'ios' ? ShadowStyle.component : css.androidShadow;
-    printLog('## ListCSKK ', this.props.data);
+    let shadow = Platform.OS === 'ios' ? ShadowStyle.component : css.androidShadow;
+    //printLog('## ListCSKK ', this.props.data);
     if (!this.props.data || this.props.data.length === 0) return null;
     else return (
       <View style = {[css.container, AlignStyle.middle]}>
-        <View style = {[css.vMain]}>
+        <View style = {[css.vMain, shadow]}>
           <FlatList
             data        = {this.props.data}
             renderItem  = {this._renderItemCSKK}
@@ -62,5 +63,8 @@ const css = StyleSheet.create({
     borderColor: SolidColors.greyLight,
     borderWidth: 1,
     borderRadius: 5
+  }
+  , androidShadow: {
+    elevation: 1
   }
 });
