@@ -8,7 +8,7 @@ import { SolidColors }      from '../../const/Colors';
 import AlignStyle from '../../css/AlignStyle';
 import TextStyles from '../../css/TextStyles';
 
-import { MediumTextBold, SmallText } from '../comp-chung/StyledText';
+import { MediumTextBold, MediumText } from '../comp-chung/StyledText';
 import { printLog } from '../../utils/LogUtil';
 
 export default class CSKKItem extends PureComponent {
@@ -29,9 +29,14 @@ export default class CSKKItem extends PureComponent {
         <View style = {[css.container, this.props.data.last ? null : css.borderBottom]}>
           <View style = {css.vInfo}>
             <MediumTextBold style = {[TextStyles.normal, css.txtMedium]}>Số thuê bao: {this.props.data.sothuebao}</MediumTextBold>
-            <Text style = {[TextStyles.normal, css.txtSmall]}>Gói cước: {this.props.data.goicuoc}</Text>
-            <Text style = {[TextStyles.normal, css.txtSmall]}>Thời gian cam kết: {this.props.data.tg_camket}</Text>
-            <Text style = {[TextStyles.normal, css.txtSmall]}>Đơn vị yêu cầu: {this.props.data.khachhang}</Text>
+            <MediumText style = {[TextStyles.normal, css.txtSmall]}>Gói cước: 
+                <MediumText style = {[TextStyles.normal, css.txtdata]}> {this.props.data.goicuoc}</MediumText>
+            </MediumText>
+            <MediumText style = {[TextStyles.normalchange, css.txtSmall]}>Thời gian cam kết: 
+                <MediumText style = {[TextStyles.normal, css.txtdata1]} > {this.props.data.tg_camket}</MediumText>
+            </MediumText>
+            <MediumText style = {[TextStyles.normal, css.txtSmall]}>Tên nhân viên: {this.props.data.user}</MediumText>
+            <MediumText style = {[TextStyles.normal, css.txtSmall]}>Tỉnh: {this.props.data.tentinh}</MediumText>
           </View>
           <View style = {[css.vIcon, AlignStyle.middle]}>
             <Icon
@@ -67,5 +72,11 @@ const css = StyleSheet.create({
   }
   , txtMedium: {
     color: SolidColors.primary
+  }
+  , txtdata: {
+    color: SolidColors.primaryRed
+  }
+  , txtdata1: {
+    color: '#2E7D32'
   }
 });
