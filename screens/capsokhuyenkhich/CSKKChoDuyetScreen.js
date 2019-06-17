@@ -28,7 +28,7 @@ export default class CSKKChoDuyetscreen extends PureComponent {
     let userInfo = await getUserObjectAsync();
 
     this.setState({loading: true});
-    CapSoKhuyenKhichApi.MNG_CSKK_GetList(userInfo.userid,
+    CapSoKhuyenKhichApi.MNG_CSKK_GetList(userInfo.userid, 0,
       reS => {
         printLog('getListCSKKChuaDuyet', reS);
         if (reS.result) {
