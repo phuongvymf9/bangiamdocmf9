@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { View, StyleSheet, Text, KeyboardAvoidingView, ScrollView, TouchableOpacity, TextInput } from "react-native";
+import { View, StyleSheet, Text, KeyboardAvoidingView, ScrollView, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 
 import { Layout } from "../../const/Layout";
@@ -15,15 +15,15 @@ import { RegularText } from '../../comps/comp-chung/StyledText';
 import ModalChung from '../../comps/capsokhuyenkhich/ModalChung';
 
 import CapSoKhuyenKhichApi  from '../../api/CapSoKhuyenKhichApi';
-import { getGoiCuocObjectAsync, saveGoiCuocAsync } from '../../storage/CapSoKhuyenKhichStorage';
 
 export default class CSKKChiTietScreen extends PureComponent {
-    static navigationOptions = createSubNavigationOptions("Thông tin chi tiết");
+  static navigationOptions = createSubNavigationOptions("Thông tin chi tiết");
     constructor(props) {
         super(props);
         this.state = {
             lsGoiCuoc       : [],
             changeGoiCuoc   : false,
+            inputGoiCuoc     : ""
         };
     }
 
@@ -74,7 +74,7 @@ export default class CSKKChiTietScreen extends PureComponent {
     onClickChange = () => {
       this.setState ({
         changeGoiCuoc: true
-    });
+      });
     }
 
     render(){
@@ -100,6 +100,8 @@ export default class CSKKChiTietScreen extends PureComponent {
                                 title = "Thay đổi gói cước:"
                                 data = {this.state.lsGoiCuoc}
                                 initValue = "Chọn gói cước"
+                                value = {this.state.inputGoiCuoc}
+                                onChangeText = {val => this.setState({ inputGoiCuoc: val })}
                               />
                               </View>
                           : null
@@ -216,6 +218,6 @@ const css = StyleSheet.create({
         fontSize: 16
     },
     formModal:{
-      marginTop: 10
+        marginTop: 10
     }
   });
