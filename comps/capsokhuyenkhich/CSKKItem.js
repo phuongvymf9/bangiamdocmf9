@@ -17,6 +17,10 @@ export default class CSKKItem extends PureComponent {
   };
 
   _goToChiTietScreen = () => {
+    if (this.props.data.daduyet == 1) {
+      Alert.alert('THÔNG BÁO', 'Bạn đã duyệt số thuê bao này. Vui lòng không thực hiện lại. Xin cảm ơn!');
+      return;
+    }
     this.props.action(this.props.data);  
   };
 
@@ -30,13 +34,15 @@ export default class CSKKItem extends PureComponent {
           <View style = {css.vInfo}>
             <MediumTextBold style = {[TextStyles.normal, css.txtMedium]}>Số thuê bao: {this.props.data.sothuebao}</MediumTextBold>
             <MediumText style = {[TextStyles.normal, css.txtSmall]}>Gói cước: 
-                <MediumText style = {[TextStyles.normal, css.txtdata]}> {this.props.data.goicuoc}</MediumText>
+                <MediumText style = {[TextStyles.normal, css.txtdata1]}> {this.props.data.goicuoc}</MediumText>
             </MediumText>
             <MediumText style = {[TextStyles.normalchange, css.txtSmall]}>Thời gian cam kết: 
-                <MediumText style = {[TextStyles.normal, css.txtdata1]} > {this.props.data.tg_camket}</MediumText>
+                <MediumText style = {[TextStyles.normal, css.txtdata1]} > {this.props.data.tg_camket} (tháng)</MediumText>
             </MediumText>
             <MediumText style = {[TextStyles.normal, css.txtSmall]}>Tên nhân viên: {this.props.data.user}</MediumText>
             <MediumText style = {[TextStyles.normal, css.txtSmall]}>Tỉnh: {this.props.data.tentinh}</MediumText>
+            <MediumText style = {{ color: this.props.data.daduyet == 0 ? SolidColors.primaryRed : SolidColors.primaryGreen }}>
+              Trạng thái: {this.props.data.daduyet == 0 ? 'Chưa duyệt' : 'Đã duyệt'}</MediumText>
           </View>
           <View style = {[css.vIcon, AlignStyle.middle]}>
             <Icon
