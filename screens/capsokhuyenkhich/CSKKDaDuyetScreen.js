@@ -17,15 +17,15 @@ export default class CSKKDaDuyetscreen extends PureComponent {
   };
 
   async componentDidMount() {
-    this.getListCSKKChuaDuyet();
+    this.getListCSKKDaDuyet();
   }
 
-  getListCSKKChuaDuyet  = async () => {
+  getListCSKKDaDuyet  = async () => {
     let userInfo = await getUserObjectAsync();
 
-    CapSoKhuyenKhichApi.MNG_CSKK_GetList(userInfo.userid,
+    CapSoKhuyenKhichApi.MNG_CSKK_GetList(userInfo.userid, 1,
       reS => {
-        printLog('getListCSKKChuaDuyet', reS);
+        printLog('getListCSKKDaDuyet', reS);
         if (reS.result) {
             /////////////////////////// Kiem tra danh sach rong ///////////////////////////
             if(reS.result.length > 0){
@@ -42,7 +42,7 @@ export default class CSKKDaDuyetscreen extends PureComponent {
       reE => {
         //this.setState({ loading: false }); // ngưng thông báo
         Alert.alert('THÔNG BÁO', 'Rất tiếc! Đã xảy ra lỗi trong quá trình tải danh sách thuê bao.\nVui lòng thử lại sau.');
-        printError('getListCSKKChuaDuyet', reE);
+        printError('getListCSKKDaDuyet', reE);
       }
     );
   }
@@ -63,7 +63,7 @@ export default class CSKKDaDuyetscreen extends PureComponent {
             <ListCSKK
                 data         = {this.state.listCSKK}
                 navigate     = {this.props.navigation.navigate}
-                reloadListDB = {this.getListCSKKChuaDuyet} 
+                reloadListDB = {this.getListCSKKDaDuyet} 
              />
         </ScrollView>
       </View>
