@@ -8,12 +8,16 @@ import { Layout }           from '../../const/Layout';
 import { SolidColors }      from '../../const/Colors';
 
 import CapSoKhuyenKhichApi  from '../../api/CapSoKhuyenKhichApi';
+
+import SmallLoading         from '../../comps/loading/SmallLoading';
 import ListCSKK from '../../comps/capsokhuyenkhich/ListCSKK';
+import { RegularText }      from '../../comps/comp-chung/StyledText';
 
 export default class CSKKDaDuyetscreen extends PureComponent {
   state = {
     listCSKK     : null,
-    refreshing      : false,
+    refreshing   : false,
+    loading         : false,
   };
 
   async componentDidMount() {
@@ -37,10 +41,10 @@ export default class CSKKDaDuyetscreen extends PureComponent {
           } else if ((reS.error)){
             Alert.alert('THÔNG BÁO', 'Rất tiếc! Đã xảy ra lỗi trong quá trình tải danh sách thuê bao.' + reS.error);
           }
-          //this.setState({ loading: false }); // ngưng thông báo
+          this.setState({ loading: false }); // ngưng thông báo
       },
       reE => {
-        //this.setState({ loading: false }); // ngưng thông báo
+        this.setState({ loading: false }); // ngưng thông báo
         Alert.alert('THÔNG BÁO', 'Rất tiếc! Đã xảy ra lỗi trong quá trình tải danh sách thuê bao.\nVui lòng thử lại sau.');
         printError('getListCSKKDaDuyet', reE);
       }
@@ -60,15 +64,27 @@ export default class CSKKDaDuyetscreen extends PureComponent {
               onRefresh   = {this._onRefresh}
             />
           }>
-            <ListCSKK
-                data         = {this.state.listCSKK}
-                navigate     = {this.props.navigation.navigate}
-                reloadListDB = {this.getListCSKKDaDuyet} 
-             />
+             {
+              this.state.loading 
+                ? <SmallLoading />
+                : this.state.listCSKK === 'NODATA' 
+                  ? <NoDataView /> 
+                  : <ListCSKK
+                        data         = {this.state.listCSKK}
+                        navigate     = {this.props.navigation.navigate}
+                        reloadListDB = {this.getListCSKKChuaDuyet} 
+                    />
+            }
         </ScrollView>
       </View>
     );
   }
+}
+
+function NoDataView() {
+  return (
+    <RegularText style={css.txtNoData}>Không có dữ liệu</RegularText>
+  );
 }
 
 const css = StyleSheet.create({
