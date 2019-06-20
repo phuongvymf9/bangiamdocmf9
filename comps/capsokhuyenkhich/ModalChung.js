@@ -1,12 +1,11 @@
 import React, { PureComponent } from 'react';
-import { StyleSheet, View, TextInput } from 'react-native';
-import ModalSelector from 'react-native-modal-selector'
+import { StyleSheet, View }     from 'react-native';
+import ModalSelector            from 'react-native-modal-selector'
 
 import AlignStyle from '../../css/AlignStyle';
-import TextStyles from '../../css/TextStyles';
 
-import { SolidColors } from '../../const/Colors';
-import { LoginFormLayout, Layout } from '../../const/Layout';
+import { SolidColors }  from '../../const/Colors';
+import { Layout }       from '../../const/Layout';
 
 export default class ModalChung extends PureComponent {
     constructor(props) {
@@ -14,7 +13,6 @@ export default class ModalChung extends PureComponent {
     }    
 
     render() {
-        //const border = last ? null : css.borderRowInfo;
         return (
             <View style = {[css.vRowInfo, css.borderRowInfo]}>
                 <View style = {css.container}>
@@ -29,15 +27,6 @@ export default class ModalChung extends PureComponent {
                         cancelTextStyle = {[css.cancelTextStyle]}
                     />
                 </View>
-                    <TextInput 
-                        style                 = {[ css.input, { textAlign: "center" }]}
-                        value                 = {this.props.value}
-                        multiline             = {true}
-                        onChangeText          = {this.props.onChangeText}
-                        underlineColorAndroid = {'rgba(0,0,0,0)'}
-                        placeholder           = {'Nhập tên gói cước khác . . .'}
-                        placeholderTextColor  = {SolidColors.grey}
-                    />
             </View>
         );
     }
@@ -79,20 +68,6 @@ const css = StyleSheet.create({
     borderRowInfo: {
         borderBottomWidth: Layout.borderWidthDefault,
         borderColor: SolidColors.borderColor,
-    },
-    input: {
-        color: SolidColors.primaryGreen,
-        fontFamily: 'roboto-bold',
-        fontSize: 16
-    },
-    input: {
-        height: LoginFormLayout.inputHeight,
-        borderRadius: Layout.borderRadisComponent,
-        borderColor: SolidColors.greyLight,
-        borderWidth: LoginFormLayout.borderWidth,
-        justifyContent: "center",
-        marginTop: Layout.marginPaddingDefault,
-        marginBottom: Layout.marginPaddingSmall,
     }
 });
 
