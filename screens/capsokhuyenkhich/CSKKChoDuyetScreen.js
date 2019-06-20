@@ -52,6 +52,49 @@ export default class CSKKChoDuyetscreen extends PureComponent {
     );
   }
 
+  loadGoiCuocAsync = async (  ) => {
+      let userInfo = await getUserObjectAsync();
+      let loaikh = this.state.navigation.params.dataCSKK.loaikh;
+
+      CapSoKhuyenKhichApi.MNG_CSKK_GetListGoiCuoc(userInfo.userid, loaikh,
+        reS => {
+          // printLog('loadBoPhanAsync', { reS });
+          if (reS.result) {
+            printLog('loadGoiCuocAsync', reS);
+            let listGoiCuoc = reS.result;
+            let listGoiCuocChuan = [];
+  
+            // Neu listCuaHang co du lieu
+            if (listGoiCuoc.length > 0) {
+              listGoiCuoc.map((goicuoc) => {
+                let goicuocChuan = {
+                  key   : goicuoc.key,
+                  label : goicuoc.tengoi
+                };
+                listGoiCuocChuan.push(goicuocChuan); // Them du lieu vao mang chuan
+              });
+              // cập nhật dữ liệu vào state
+              this.setState({ listGoiCuoc: listGoiCuocChuan });
+            } else {
+              this.setState({ listGoiCuoc: 'NO DATA' });
+            }
+          } else if ((reS.error)) {
+            Alert.alert('THÔNG BÁO', 'Rất tiếc! Đã xảy ra lỗi trong quá trình tải danh sách gói cước.' + reS.error);
+          }
+        },
+        reE => {
+          printError('loadGoiCuocAsync', reE);
+          Alert.alert('THÔNG BÁO', 'Rất tiếc! Đã xảy ra lỗi trong quá trình tải danh sách gói cước.\nVui lòng thử lại sau.');
+        }
+      );
+    }
+
+    _onRefresh = async () => {
+      this.setState({ refreshing: true });
+      await this.getDmHuyenOnline();
+      this.setState({ refreshing: false });
+    }
+    
   render(){
     return(
       <View style = {[css.container, AlignStyle.middle]}>
@@ -73,7 +116,7 @@ export default class CSKKChoDuyetscreen extends PureComponent {
                   : <ListCSKK
                         data         = {this.state.listCSKK}
                         navigate     = {this.props.navigation.navigate}
-                        reloadListDB = {this.getListCSKKChuaDuyet} 
+                        reloadList   = {this.getListCSKKChuaDuyet} 
                     />
             }
         </ScrollView>
@@ -84,7 +127,7 @@ export default class CSKKChoDuyetscreen extends PureComponent {
 
 function NoDataView() {
   return (
-    <RegularText style={css.txtNoData}>Không có dữ liệu. Vui lòng thử lại sau</RegularText>
+    <RegularText style={css.txtNoData}>Không có dữ liệu</RegularText>
   );
 }
 
@@ -100,6 +143,6 @@ const css = StyleSheet.create({
   },
   txtNoData: {
     textAlign: 'center',
-    color: SolidColors.primaryRed
+    color: SolidColors.grey
   }
 });
