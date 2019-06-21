@@ -284,12 +284,12 @@ export default class CSKKChiTietScreen extends PureComponent {
                           colorIcon = {'#43A047'} 
                           onPress   = {this.onClickFinish} 
                         />
-                        <Button 
+                        {/* <Button 
                           text      = {'Không duyệt'} 
                           iconName  = {'ios-brush'} 
                           colorIcon = {'#F48FB1'} 
                           onPress   = {this.onClickChange}
-                        />
+                        /> */}
                       </View>
                 }
         </ScrollView>
