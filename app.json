@@ -19,7 +19,11 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.mf9.nhanvienquanlymf9"
+    },
+    "android": {
+      "package": "com.mobifone.nhanvienquanlymf9"
     },
     "hooks": {
       "postPublish": [
